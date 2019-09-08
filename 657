@@ -1,0 +1,33 @@
+class Solution {
+public:
+    
+    bool judgeCircle(string moves) {
+        int i = 0;
+        int j = 0;
+        if (moves.size() % 2 != 0) {
+            return false;
+        }
+        if ((std::count(moves.begin(), moves.end(), 'U') == std::count(moves.begin(), moves.end(), 'D')) && std::count(moves.begin(), moves.end(), 'L') == std::count(moves.begin(), moves.end(), 'R')) {
+            return true;
+        } 
+        return false;
+        
+        //Very slow
+        /*
+        for (int c = 0; c < moves.length(); c ++) {
+            std::cout << moves[c];
+            if (moves[c] == 'L') {
+                i --;
+            } else if (moves[c] == 'R') {
+                i ++;
+            } else if (moves[c] == 'U') {
+                j ++;
+            } else {
+                j --;
+            }
+        }
+        if (i == 0 && j == 0) return true;
+        return false;
+        */
+    }
+};
